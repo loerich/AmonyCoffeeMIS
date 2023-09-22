@@ -107,6 +107,12 @@ env:
 jobs:
   publish:
     runs-on: ubuntu-latest
+
+     steps:
+      - name: Login to Azure
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
     
     steps:
       - uses: actions/checkout@v3
